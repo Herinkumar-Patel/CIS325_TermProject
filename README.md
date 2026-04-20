@@ -1,34 +1,37 @@
-# TaskBridge – Deliverable 2
+## Features included
+- User registration and login
+- Password reset / change if forgotten
+- Dashboard summary
+- Task CRUD
+- Project collaboration with member list
+- Notifications and reminders
+- Notes
+- File uploads
+- SQLite persistence so users can close the app and log back in later
 
-**Student Name:** Herinkumar Patel
+## Run the app
 
-## Project Structure
-
-```text
-taskbridge-deliverable-2/
-│
-├── schema.md
-├── package.json
-├── README.md
-│
-├── src/
-│   ├── Frontend/
-│   │   └── App.jsx
-│   └── Backend/
-│       ├── database.js
-│       ├── server.js
-│       └── taskbridge.db
-```
-
-## Run the Project
-
+### Backend
 ```bash
+cd backend
 npm install
 npm run dev
 ```
+Backend runs at `http://localhost:5000`
 
-The backend runs on:
-
-```text
-http://localhost:5000
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
 ```
+Frontend runs at `http://localhost:5173`
+
+## Suggested test flow
+1. Open the frontend.
+2. Register a new user.
+3. Log out.
+4. Close both apps.
+5. Relaunch backend and frontend.
+6. Log in with the same credentials.
+7. Use the dashboard and other features.

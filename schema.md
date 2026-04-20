@@ -1,18 +1,24 @@
-taskbridge.db
+# TaskBridge Schema
 
-Table: tasks
+Database: `taskbridge.db`
 
-columns: id, title, description, course, dueDate, priority, status, createdAt
+## Table: users
+Columns: `id`, `fullName`, `email`, `passwordHash`, `createdAt`
 
-JSON format
+## Table: tasks
+Columns: `id`, `userId`, `title`, `description`, `course`, `dueDate`, `priority`, `status`, `createdAt`
 
-{
-  id: int,
-  title: string,
-  description: string,
-  course: string,
-  dueDate: string,
-  priority: string,
-  status: string,
-  createdAt: string
-}
+## Table: projects
+Columns: `id`, `ownerId`, `title`, `description`, `course`, `dueDate`, `createdAt`
+
+## Table: project_members
+Columns: `id`, `projectId`, `memberName`, `memberEmail`, `role`
+
+## Table: reminders
+Columns: `id`, `userId`, `message`, `remindAt`, `isRead`, `createdAt`
+
+## Table: notes
+Columns: `id`, `userId`, `title`, `content`, `createdAt`
+
+## Table: uploads
+Columns: `id`, `userId`, `originalName`, `storedName`, `filePath`, `createdAt`
