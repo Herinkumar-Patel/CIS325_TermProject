@@ -1,37 +1,59 @@
-## Features included
-- User registration and login
-- Password reset / change if forgotten
-- Dashboard summary
-- Task CRUD
-- Project collaboration with member list
-- Notifications and reminders
-- Notes
-- File uploads
-- SQLite persistence so users can close the app and log back in later
+## Project structure
 
-## Run the app
+```text
+src/
+  Backend/
+    server.js
+    db.js
+    middleware/auth.js
+    package.json
+  Frontend/
+    src/App.jsx
+    src/main.jsx
+    src/styles.css
+    package.json
+```
 
-### Backend
+## How to run the backend
+
 ```bash
-cd backend
+cd src/Backend
 npm install
 npm run dev
 ```
-Backend runs at `http://localhost:5000`
 
-### Frontend
+Backend runs at:
+
+```text
+http://localhost:5000
+```
+
+## How to run the frontend
+
+Open a second terminal:
+
 ```bash
-cd frontend
+cd src/Frontend
 npm install
 npm run dev
 ```
-Frontend runs at `http://localhost:5173`
 
-## Suggested test flow
-1. Open the frontend.
-2. Register a new user.
-3. Log out.
-4. Close both apps.
-5. Relaunch backend and frontend.
-6. Log in with the same credentials.
-7. Use the dashboard and other features.
+Frontend runs at:
+
+```text
+http://localhost:5173
+```
+
+## API connection
+
+The frontend uses Fetch and connects to:
+
+```javascript
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+```
+
+Optional `.env` file for frontend:
+
+```text
+VITE_API_URL=http://localhost:5000
+```
